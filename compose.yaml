@@ -1,16 +1,16 @@
 services:
   brossef-tracker:
-    image: ghcr.io/thebrossef/brossef-tracker:latest
+    image: ghcr.io/${GITHUB_OWNER}/brossef-tracker:latest
     container_name: brossef-tracker
     restart: unless-stopped
     pull_policy: always
     environment:
       NODE_ENV: production
-      PORT: 3001
+      PORT: 3000
       DATA_DIR: /data
       TZ: America/Toronto
     ports:
-      - "3001:3001"
+      - "3000:3000"
     volumes:
       - brossef-data:/data
     security_opt:
